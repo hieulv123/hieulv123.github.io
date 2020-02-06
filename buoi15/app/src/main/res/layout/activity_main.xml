@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/container"
+            android:layout_above="@id/controller" />
+
+        <com.t3h.buoi15.views.ControllerView
+            android:id="@+id/controller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/nav" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            app:menu="@menu/tab" />
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="300dp"
+            android:layout_below="@+id/nav"
+            android:layout_height="match_parent">
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="300dp"
+                android:id="@+id/navdraw"
+                android:background="#CBE6CB"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/header_layout"
+                app:menu="@menu/tab"
+                android:layout_gravity="start"
+                android:layout_height="match_parent">
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            app:title="Music Play"
+            app:titleTextColor="#fff"
+
+            android:minHeight="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </RelativeLayout>
+
+
+</layout>
