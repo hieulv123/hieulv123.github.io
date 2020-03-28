@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/bg_fg_pw"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_forgot_pw"
+        app:layout_constraintDimensionRatio="320:176"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/img_unionn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/ic_union"
+        app:layout_constraintDimensionRatio="320:420"
+        app:layout_constraintTop_toTopOf="@id/bg_fg_pw" />
+
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/tv_forgot_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="88dp"
+        android:text="Lấy lại mật khẩu"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/bg_fg_pw"
+        app:layout_constraintRight_toRightOf="@id/bg_fg_pw"
+        app:layout_constraintTop_toTopOf="@id/img_unionn" />
+
+    <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
+        android:id="@+id/edt_em_fg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/background_editextpng"
+        android:hint="Email"
+        android:paddingLeft="13dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgot_pass" />
+
+    <Button
+        android:id="@+id/btn_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_button_orange"
+        android:text="Gửi mã xác nhận"
+        android:textColor="#fff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_em_fg" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

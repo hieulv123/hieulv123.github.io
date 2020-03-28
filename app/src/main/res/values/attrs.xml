@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextViewFonts">
+        <attr name="font_type" format="string"/>
+    </declare-styleable>
+    <string name="roboto_regular">fonts/Roboto-Regular.ttf</string>
+    <string name="roboto_bold">fonts/Roboto-Bold.ttf</string>
+    <string name="quicksand_regular">fonts/Quicksand-Regular.tff</string>
+    <string name="quicksand_medium">fonts/Quicksand-Medium.ttf</string>
+    <string name="helvetica_reuglar">fonts/HelveticaNeue-Regular.ttf</string>
+    <string name="helvetica_medium">fonts/HelveticaNeue-Medium.ttf</string>
+    <string name="helvetica_bold">fonts/HelveticaNeue-Bold.otf</string>
+</resources>

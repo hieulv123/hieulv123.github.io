@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/bg_fg_pw"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_forgot_pw"
+        app:layout_constraintDimensionRatio="320:176"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/img_unionn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="148dp"
+        android:src="@drawable/ic_union"
+        app:layout_constraintDimensionRatio="320:420"
+        app:layout_constraintTop_toTopOf="@id/bg_fg_pw"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/tv_ip_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="88dp"
+        android:text="Nhập mã xác nhận"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/bg_fg_pw"
+        app:layout_constraintRight_toRightOf="@id/bg_fg_pw"
+        app:layout_constraintTop_toTopOf="@id/img_unionn" />
+
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/tv_no_receive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginRight="37dp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="Nhập mã xác nhận được gửi về Email của bạn.
+                                        Không nhận được mã?"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ip_code" />
+
+    <TextView
+        android:id="@+id/resen_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="180dp"
+        android:text="@string/resend"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_no_receive"
+        app:layout_constraintLeft_toRightOf="@id/tv_no_receive"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <tcom.hieulv.foodcustomer.customview.CustomOtpEdittext
+        android:id="@+id/et_otp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        android:cursorVisible="false"
+        android:digits="1234567890"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textIsSelectable="false"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_no_receive"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_receive"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_receive" />
+
+    <Button
+        android:id="@+id/btn_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_button_orange"
+        android:text="Gửi mã"
+        android:textColor="#fff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_receive" />
+
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginRight="64dp"
+        android:text="@string/tele_support"
+        android:textSize="14dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_config" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
