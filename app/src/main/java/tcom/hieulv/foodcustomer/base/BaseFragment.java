@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +24,7 @@ public abstract class BaseFragment extends Fragment implements MvpView {
     private Unbinder mUnBinder;
     private View containerView;
     private ProgressDialog mProgressDialog;
+    LinearLayout container;
 
     @Nullable
     @Override
@@ -30,8 +34,20 @@ public abstract class BaseFragment extends Fragment implements MvpView {
         }
         containerView = inflater.inflate(getLayoutId(), container, false);
         mUnBinder = ButterKnife.bind(this, containerView);
+        setListener(containerView);
         initPresenter();
         return containerView;
+    }
+
+    private void setListener(View view) {
+        view.setClickable(true);
+        view.setOnTouchListener((v, event) -> {
+            if (!(v instanceof EditText))
+                BaseFragment.this.hideKeyBoard();
+            return true;
+        });
+        view.setFocusableInTouchMode(true);
+
     }
 
 
@@ -41,6 +57,7 @@ public abstract class BaseFragment extends Fragment implements MvpView {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         handleArguments(getArguments());
         setUp(view);
     }
@@ -59,6 +76,7 @@ public abstract class BaseFragment extends Fragment implements MvpView {
     }
 
     protected abstract int getLayoutId();
+
 
     protected abstract void setUp(View view);
 
@@ -120,9 +138,8 @@ public abstract class BaseFragment extends Fragment implements MvpView {
 
     @Override
     public void onDetach() {
-        if (mActivity != null) {
-            super.onDetach();
-        }
+        mActivity = null;
+        super.onDetach();
     }
 
     @Override
@@ -138,5 +155,17 @@ public abstract class BaseFragment extends Fragment implements MvpView {
 
         void onFragmentDetached(String tag);
 
+    }
+
+    public void hideKeyBoard() {
+        View view = getActivity().getCurrentFocus();
+        if ((view != null)) {
+            InputMethodManager imm = (InputMethodManager) getContext().getSystemService(
+                    Context.INPUT_METHOD_SERVICE
+            );
+            if (imm != null) {
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+        }
     }
 }

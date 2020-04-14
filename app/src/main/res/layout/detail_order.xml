@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_detailod"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@drawable/bg_detailod"
+                app:layout_constraintDimensionRatio="320:249"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.8" />
+
+            <ImageView
+
+                android:id="@+id/img_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_arrow_left"
+                app:layout_constraintLeft_toLeftOf="@id/img_detailod"
+                app:layout_constraintTop_toTopOf="@id/img_detailod" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="17dp"
+                android:text="Đơn hàng #4"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                app:font_type="@string/roboto_bold"
+                app:layout_constraintLeft_toRightOf="@id/img_back"
+                app:layout_constraintTop_toTopOf="@id/img_detailod" />
+
+            <View
+                android:id="@+id/img_bg_white"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_white"
+                app:layout_constraintDimensionRatio="288:550"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="24dp"
+                android:text="Thông tin cửa hàng:"
+                android:textColor="@color/colorOrange"
+                android:textSize="14dp"
+                app:font_type="@string/roboto_bold"
+                app:layout_constraintLeft_toLeftOf="@id/img_bg_white"
+                app:layout_constraintTop_toTopOf="@id/img_bg_white" />
+
+            <ImageView
+                android:id="@+id/img_home"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_home"
+                app:layout_constraintLeft_toLeftOf="@id/tv_restaurant"
+                app:layout_constraintTop_toBottomOf="@id/tv_restaurant" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:text="Nhà hàng sapa"
+                app:font_type="@string/roboto_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/img_home"
+                app:layout_constraintLeft_toRightOf="@id/img_home" />
+
+            <ImageView
+                android:id="@+id/img_mappin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_map_pin"
+                app:layout_constraintLeft_toLeftOf="@id/img_home"
+                app:layout_constraintTop_toBottomOf="@id/img_home" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:text="@string/address"
+                app:layout_constraintBottom_toBottomOf="@+id/img_mappin"
+                app:layout_constraintLeft_toRightOf="@+id/img_mappin" />
+
+            <View
+                android:id="@+id/line_order1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="30dp"
+                android:background="#DBD6D6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_user_received"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:text="Thông tin người nhận :"
+                android:textColor="@color/colorOrange"
+                app:font_type="@string/roboto_bold"
+                app:layout_constraintLeft_toLeftOf="@id/tv_restaurant"
+                app:layout_constraintTop_toBottomOf="@id/line_order1" />
+
+            <ImageView
+                android:id="@+id/img_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/ic_user"
+                app:layout_constraintLeft_toLeftOf="@id/img_mappin"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_received" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nguyễn Thị Phương"
+                app:layout_constraintBottom_toBottomOf="@id/img_user"
+                app:layout_constraintLeft_toLeftOf="@id/tv_address" />
+
+            <ImageView
+                android:id="@+id/img_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/ic_clock"
+                app:layout_constraintLeft_toLeftOf="@id/img_user"
+                app:layout_constraintTop_toBottomOf="@id/img_user" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="12:40 PM 12/10/19"
+                app:layout_constraintLeft_toLeftOf="@id/tv_username"
+                app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+            <ImageView
+                android:id="@+id/img_mappin1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_map_pin"
+                app:layout_constraintLeft_toLeftOf="@id/img_clock"
+                app:layout_constraintTop_toBottomOf="@id/img_clock" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_address1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/address"
+                app:layout_constraintLeft_toLeftOf="@id/tv_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+            <View
+                android:id="@+id/line_order2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginRight="30dp"
+                android:background="#DBD6D6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_address1" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Danh mục hàng:"
+                android:textColor="@color/colorOrange"
+                app:font_type="@string/roboto_bold"
+                app:layout_constraintLeft_toLeftOf="@id/tv_user_received"
+                app:layout_constraintTop_toBottomOf="@id/line_order2"
+                android:id="@+id/tv_category_produc"/>
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

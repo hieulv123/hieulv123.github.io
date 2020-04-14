@@ -10,9 +10,9 @@
         android:id="@+id/img_bg"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="320:176"
-        app:layout_constraintWidth_percent="0.1"
-        android:src="@drawable/background_login"/>
+        app:layout_constraintDimensionRatio="514:283"
+        app:layout_constraintWidth_percent="0.9"
+        android:src="@drawable/img_bg"/>
     <ImageView
         android:id="@+id/img_union"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,6 +40,7 @@
         android:layout_marginRight="112dp"
         />
     <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
+        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -50,11 +51,14 @@
         android:layout_marginLeft="16dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="16dp"
+
         android:paddingTop="10dp"
         android:paddingBottom="14dp"
         android:paddingLeft="13dp"
         android:background="@drawable/background_editextpng"/>
     <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
+        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/edt_password"
@@ -74,7 +78,7 @@
         android:id="@+id/btn_logemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ĐĂNG NHẬP BẰNG EMAIL"
+        android:text="ĐĂNG NHẬP "
         android:background="@drawable/bg_button_orange"
         app:layout_constraintLeft_toLeftOf="@+id/edt_email"
         app:layout_constraintRight_toRightOf="@id/edt_email"

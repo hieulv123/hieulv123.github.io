@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toast_layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_toast"
+    android:padding="10dp">
+
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="#FFF"
+        android:textSize="12dp" />
+
+</FrameLayout>

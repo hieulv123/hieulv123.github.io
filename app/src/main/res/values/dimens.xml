@@ -3,4 +3,6 @@
     <dimen name="radius_button">5dp</dimen>
     <dimen name="header_textview">12sp</dimen>
     <dimen name="dimen_marginLeft">22dp</dimen>
+    <dimen name="dimen_text_name_restaurants">13dp</dimen>
+    <dimen name="dimen_header_marginleft">16dp</dimen>
 </resources>

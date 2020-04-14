@@ -93,13 +93,15 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
     public void onError(String message) {
         if (message != null) {
             showSnackBar(message);
+        }else {
+            showSnackBar("Đã có lỗi xảy ra");
         }
 
     }
 
-    private void showSnackBar(String message) {
+    private  void showSnackBar(String message) {
         Snackbar snackbar = Snackbar.make(findViewById(R.id.content),
-                message, Snackbar.LENGTH_SHORT);
+                message, Snackbar.LENGTH_LONG);
         View sbView = snackbar.getView();
         TextView textView = sbView
                 .findViewById(com.google.android.material.R.id.snackbar_text);
@@ -117,9 +119,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
     public void showMessage(String message) {
         if (message != null) {
             showSnackBar(message);
-            showSnackBar("Đã có lỗi xảy ra");
         }
-
     }
 
 

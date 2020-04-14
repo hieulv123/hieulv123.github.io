@@ -1,18 +1,21 @@
 package tcom.hieulv.foodcustomer.ui.register;
 
 import android.app.DatePickerDialog;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import tcom.hieulv.foodcustomer.MyApplication;
 import tcom.hieulv.foodcustomer.R;
 import tcom.hieulv.foodcustomer.base.BaseFragment;
+import tcom.hieulv.foodcustomer.customview.CustomToast;
 import tcom.hieulv.foodcustomer.util.CommonUntils;
 
 public class FragmentRegister extends BaseFragment implements RegisterMvpView {
@@ -55,12 +58,12 @@ public class FragmentRegister extends BaseFragment implements RegisterMvpView {
     @OnClick(R.id.btn_dangki)
     void onClickRegister() {
         if (!CommonUntils.isEditTextEmpty(edtHoten)
-                &&!CommonUntils.isEditTextEmpty(edtNgaysinh)
-                &&!CommonUntils.isEditTextEmpty(edtcmnd)
-                &&!CommonUntils.isEditTextEmpty(edtSdt)
-                &&!CommonUntils.isEditTextEmpty(edtEmail)
-                &&!CommonUntils.isEditTextEmpty(edtdiachi)
-                &&!CommonUntils.isEditTextEmpty(edtMatKhau)){
+                &&!CommonUntils.isEditTextEmpty(edtNgaysinh)){
+//                &&!CommonUntils.isEditTextEmpty(edtcmnd)
+//                &&!CommonUntils.isEditTextEmpty(edtSdt)
+//                &&!CommonUntils.isEditTextEmpty(edtEmail)
+//                &&!CommonUntils.isEditTextEmpty(edtdiachi)
+//                &&!CommonUntils.isEditTextEmpty(edtMatKhau)){
             mPresenter.onRegisterCustomer(edtHoten.getText().toString().trim(),
                     edtcmnd.getText().toString().trim(),
                     edtSdt.getText().toString().trim(),
@@ -68,40 +71,50 @@ public class FragmentRegister extends BaseFragment implements RegisterMvpView {
                     edtdiachi.getText().toString().trim(),
                     edtMatKhau.getText().toString().trim(),
                     edtNgaysinh.getText().toString().trim());
+        }else{
+//            Toast.makeText(getActivity(),"Bạn phải nhập đủ thông tin",Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onRegisterCustomSuccess() {
-        Toast.makeText(getActivity(), "Đăng kí tài khoản thành công", Toast.LENGTH_SHORT).show();
+        Toast toast = CustomToast.makeText(getActivity(),"Đăng kí tài khoản thành công",
+                CustomToast.LONG,1,R.drawable.ic_check_black_24dp);
+        toast.setGravity(Gravity.TOP|Gravity.CENTER,30,0);;
+        toast.show();
     }
 
     @Override
     public void onRegisterCustomFaild(String message) {
 
     }
+
+    @Override
+    public void onRegisterCustomFaild(List<String> message) {
+        String Message = String.valueOf(message);
+        Toast toast = CustomToast.makeText(getActivity(),Message,
+                CustomToast.LONG,2,R.drawable.ic_error_24dp);
+        toast.setGravity(Gravity.TOP|Gravity.CENTER,30,0);;
+        toast.show();
+
+    }
+
     public void datePickerDialog(){
         final Calendar cldr = Calendar.getInstance();
         int day = cldr.get(Calendar.DAY_OF_MONTH);
         int month = cldr.get(Calendar.MONTH);
         int year = cldr.get(Calendar.YEAR) ;
-        edtNgaysinh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                picker=  new DatePickerDialog(getActivity(),
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+        edtNgaysinh.setOnClickListener(v -> {
+            picker = new DatePickerDialog(FragmentRegister.this.getActivity(),
+                    (view, year1, monthOfYear, dayOfMonth) -> {
 
-                                String month = monthOfYear >= 9 ? (monthOfYear + 1) + "" : "0" + (monthOfYear + 1);
-                                String day = dayOfMonth >= 10 ? dayOfMonth + "" : "0" + dayOfMonth;
-                                edtNgaysinh.setText(year + "-" + month + "-" + day);
+                        String month1 = monthOfYear >= 9 ? (monthOfYear + 1) + "" : "0" + (monthOfYear + 1);
+                        String day1 = dayOfMonth >= 10 ? dayOfMonth + "" : "0" + dayOfMonth;
+                        edtNgaysinh.setText(year1 + "-" + month1 + "-" + day1);
 
-                            }
-                        },year,month,day);
-                picker.show();
+                    }, year, month, day);
+            picker.show();
 
-            }
         });
     }
     @OnClick(R.id.ic_back)

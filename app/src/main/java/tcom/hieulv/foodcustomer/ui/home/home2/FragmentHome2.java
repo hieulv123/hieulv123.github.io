@@ -1,23 +1,32 @@
 package tcom.hieulv.foodcustomer.ui.home.home2;
 
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import tcom.hieulv.foodcustomer.MyApplication;
 import tcom.hieulv.foodcustomer.R;
 import tcom.hieulv.foodcustomer.base.BaseFragment;
+import tcom.hieulv.foodcustomer.customview.CustomToast;
 import tcom.hieulv.foodcustomer.ui.home.home1.Home1Presenter;
 import tcom.hieulv.foodcustomer.ui.home.home3.FragmentHome3;
 import tcom.hieulv.foodcustomer.util.CommonUntils;
 
 public class FragmentHome2 extends BaseFragment implements Home2MvpView {
+    @BindView(R.id.toast_view)
+    View toastView;
     @BindView(R.id.et_otp)
     EditText edtOtp;
     private Home2Presenter mPresenter;
@@ -39,6 +48,7 @@ public class FragmentHome2 extends BaseFragment implements Home2MvpView {
     @Override
     protected void setUp(View view) {
 
+
     }
 
 
@@ -58,11 +68,11 @@ public class FragmentHome2 extends BaseFragment implements Home2MvpView {
 
             if (edtOtp.getText().toString().equals(Otp)) {
                 mPresenter.onSendCodeConfig(edtOtp.getText().toString().trim(), token);
-                Toast.makeText(getActivity(), "Code true", Toast.LENGTH_SHORT).show();
-                addFragment(new FragmentHome3());
-            }else {
-                Toast.makeText(getActivity(), "Mã xác nhận chưa đúng", Toast.LENGTH_SHORT).show();
-
+            } else {
+                Toast toast= CustomToast.makeText(getActivity(),"Mã xác nhận không đúng",
+                        CustomToast.LONG,2,R.drawable.ic_error_24dp);
+                toast.setGravity(Gravity.TOP|Gravity.CENTER,30,0);
+                toast.show();
             }
 
         }
@@ -71,11 +81,24 @@ public class FragmentHome2 extends BaseFragment implements Home2MvpView {
 
     @Override
     public void sendCodeConfigSuccess() {
-        Toast.makeText(getActivity(), "Send Code Success", Toast.LENGTH_SHORT).show();
+//        Toast toast = Toast.makeText(getActivity(), "Send Code Success", Toast.LENGTH_LONG);
+//        toast.setGravity(Gravity.RIGHT | Gravity.TOP,15,15);
+//
+//        toast.show();
+
+//        Toast.makeText(getActivity(), "Send Code Success", Toast.LENGTH_SHORT).show();
+        addFragment(new FragmentHome3());
     }
 
     @Override
     public void sendCodeConfigError(String error) {
 
     }
+
+    @Override
+    public void sendCodeConfigError(List<String> message) {
+
+    }
+
+
 }

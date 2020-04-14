@@ -3,4 +3,6 @@
     <string name="creat_account"><u>Tạo tài khoản</u></string>
     <string name="resend"><u>Gửi lại</u></string>
     <string name="tele_support"><u>Cần hỗ trợ qua tổng đài 19000</u></string>
+    <string name="shipping">Đang giao</string>
+    <string name="address">321 Trường Chình ,Đống Đa,Hà Nội</string>
 </resources>

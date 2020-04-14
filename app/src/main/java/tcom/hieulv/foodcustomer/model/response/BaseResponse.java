@@ -3,6 +3,8 @@ package tcom.hieulv.foodcustomer.model.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class BaseResponse<T>{
     @Expose
     @SerializedName("code")
@@ -12,7 +14,7 @@ public class BaseResponse<T>{
     private boolean status;
     @Expose
     @SerializedName("message")
-    private String message ;
+    private List<String> message =null ;
     @Expose
     @SerializedName("data")
     private T data ;
@@ -25,7 +27,7 @@ public class BaseResponse<T>{
         return status;
     }
 
-    public Object getMessage() {
+    public List<String> getMessage() {
         return message;
     }
 
