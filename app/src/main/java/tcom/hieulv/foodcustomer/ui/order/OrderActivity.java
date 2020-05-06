@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import tcom.hieulv.foodcustomer.R;
 import tcom.hieulv.foodcustomer.base.BaseActivity;
+import tcom.hieulv.foodcustomer.ui.home.food.ActivityHome;
 import tcom.hieulv.foodcustomer.ui.order.detailorder.DetailOrderFragment;
 
 public class OrderActivity extends BaseActivity {
@@ -28,13 +29,13 @@ public class OrderActivity extends BaseActivity {
 
     @Override
     protected void setUp() {
-        addFragment(new DetailOrderFragment());
+        addFragment(new FragmentOrder());
 
     }
     private void addFragment(Fragment fragment){
         FragmentManager fm  = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.frame_order,fragment).addToBackStack(null);
+        ft.replace(R.id.frame_order,fragment);
         ft.commit();
     }
 
@@ -43,4 +44,8 @@ public class OrderActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/img_avatarUser"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/avatar_user"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <View
+        android:id="@+id/viewUser"
+        android:layout_width="fill_parent"
+        android:layout_height="6dp"
+        android:background="@drawable/bg_lineuser"
+        app:layout_constraintTop_toBottomOf="@id/img_avatarUser"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="29dp"/>
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Lê Văn Hiếu"
+        app:font_type="@string/roboto_bold"
+        app:layout_constraintLeft_toRightOf="@id/img_avatarUser"
+        android:layout_marginLeft="18dp"
+        app:layout_constraintBottom_toBottomOf="@id/img_avatarUser"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/tv_nameUser"/>
+    <ImageView
+        android:id="@+id/img_orderUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_order"
+        app:layout_constraintTop_toBottomOf="@id/viewUser"
+        android:layout_marginTop="31dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/marginLeftIconUser"/>
+    <ImageView
+        android:id="@+id/img_addressUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_reveived_address"
+        app:layout_constraintTop_toBottomOf="@id/img_orderUser"
+        android:layout_marginTop="@dimen/marginTopIconUser"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/marginLeftIconUser"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_securityUSer"
+        android:src="@drawable/ic_liecense"
+        app:layout_constraintTop_toBottomOf="@id/img_addressUser"
+        android:layout_marginTop="@dimen/marginTopIconUser"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/marginLeftIconUser"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_liecenseUser"
+        android:src="@drawable/ic_dieukhoan"
+        app:layout_constraintTop_toBottomOf="@id/img_securityUSer"
+        android:layout_marginTop="@dimen/marginTopIconUser"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/marginLeftIconUser"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_helpUser"
+        android:src="@drawable/ic_helps"
+        app:layout_constraintTop_toBottomOf="@id/img_liecenseUser"
+        android:layout_marginTop="@dimen/marginTopIconUser"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/marginLeftIconUser"
+        />
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đơn hàng"
+        app:font_type="@string/roboto_regular"
+        android:id="@+id/tv_order"
+        app:layout_constraintBottom_toBottomOf="@id/img_orderUser"
+        app:layout_constraintLeft_toRightOf="@id/img_orderUser"
+        android:layout_marginLeft="18dp"/>
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/tv_addressUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ nhận hàng"
+        app:layout_constraintBottom_toBottomOf="@id/img_addressUser"
+        app:layout_constraintLeft_toLeftOf="@id/tv_order"/>
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/tv_securityUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chính sách bảo mật"
+        app:layout_constraintBottom_toBottomOf="@id/img_securityUSer"
+        app:layout_constraintLeft_toLeftOf="@id/tv_order"/>
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/tv_liecenseUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Điều khoản sử dụng"
+        app:layout_constraintBottom_toBottomOf="@id/img_liecenseUser"
+        app:layout_constraintLeft_toLeftOf="@id/tv_order"/>
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:id="@+id/tv_helpUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trợ giúp"
+        app:layout_constraintBottom_toBottomOf="@id/img_helpUser"
+        app:layout_constraintLeft_toLeftOf="@id/tv_order"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/lineLogout1"
+        app:layout_constraintTop_toBottomOf="@id/tv_helpUser"
+        android:background="#66666666"
+        app:layout_constraintLeft_toLeftOf="@id/viewUser"
+        app:layout_constraintRight_toRightOf="@id/viewUser"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginTop="30dp"
+        />
+    <ImageView
+        android:id="@+id/img_logout"
+        android:padding= "2dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_feather_log_out"
+        app:layout_constraintTop_toBottomOf="@id/lineLogout1"
+        android:layout_marginTop="11dp"
+        app:layout_constraintLeft_toLeftOf="@id/lineLogout1"
+        android:layout_marginLeft="10dp"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/lineLogout2"
+        app:layout_constraintTop_toBottomOf="@id/img_logout"
+        android:background="#66666666"
+        app:layout_constraintLeft_toLeftOf="@id/viewUser"
+        app:layout_constraintRight_toRightOf="@id/viewUser"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginTop="13dp"
+        />
+    <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/lineLogout2"
+        android:layout_marginBottom="17dp"
+        android:text="Đăng xuất"
+        android:textColor="#EB5757"
+        app:font_type="@string/roboto_bold"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@id/lineLogout1"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toRightOf="@id/img_logout"
+        android:layout_marginLeft="52dp"
+        android:id="@+id/tv_logout"
+        />
+
+
+
+
+
+
+
+    
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

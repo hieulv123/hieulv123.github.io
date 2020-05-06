@@ -55,7 +55,7 @@ public class FragmentHome2 extends BaseFragment implements Home2MvpView {
     private void addFragment(Fragment fragment) {
         FragmentManager fm = getActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.frame_login, fragment).addToBackStack(null);
+        ft.replace(R.id.frame_login, fragment);
         ft.commit();
     }
 

@@ -1,5 +1,8 @@
 package tcom.hieulv.foodcustomer.ui.home.home3;
 
+import android.annotation.SuppressLint;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +30,10 @@ public class FragmentHome3 extends BaseFragment implements Home3MvpView {
     EditText edtReinPass;
     @BindView(R.id.btn_sendcode)
     Button btnSendCode;
+    @BindView(R.id.view3)
+    View view3;
+    @BindView(R.id.view4)
+    View view4;
 
     @Override
     protected void initPresenter() {
@@ -42,6 +49,7 @@ public class FragmentHome3 extends BaseFragment implements Home3MvpView {
 
     @Override
     protected void setUp(View view) {
+        hideShowPassWord(view3, view4, edtNewPass, edtReinPass);
 
     }
 
@@ -60,6 +68,8 @@ public class FragmentHome3 extends BaseFragment implements Home3MvpView {
                 String token = MyApplication.getInstance().getLoginRepository().getToken();
                 home3Presenter.createNewPass(edtNewPass.getText().toString().trim(), token);
             } else {
+//                view3.setVisibility(View.INVISIBLE);
+//                view4.setVisibility(View.INVISIBLE);
                 btnSendCode.setEnabled(false);
             }
         }
@@ -85,10 +95,37 @@ public class FragmentHome3 extends BaseFragment implements Home3MvpView {
 
 
     }
+
     private void addFragment(Fragment fragment) {
         FragmentManager fm = getActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.frame_login, fragment).addToBackStack(null);
+        ft.replace(R.id.frame_login, fragment);
         ft.commit();
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    public void hideShowPassWord(View view1, View view2, EditText editText1, EditText editText2) {
+        view1.setOnClickListener(v -> {
+            if (editText1.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                editText1.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                editText1.setFocusable(true);
+                view1.setBackgroundResource(R.drawable.ic_visibility_off_black_24dp);
+            } else {
+                view1.setBackgroundResource(R.drawable.ic_visibility_black_24dp);
+                editText1.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+
+        });
+        view2.setOnClickListener(v -> {
+            if (editText2.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
+                editText2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                editText2.setFocusable(true);
+                view2.setBackgroundResource(R.drawable.ic_visibility_off_black_24dp);
+
+            } else {
+                view2.setBackgroundResource(R.drawable.ic_visibility_black_24dp);
+                editText2.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
     }
 }

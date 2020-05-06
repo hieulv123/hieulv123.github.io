@@ -3,15 +3,54 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
         <item name="tabIndicator">@color/colorOrange</item>
     </style>
+
     <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
         <item name="tabBackground">@drawable/tab_background</item>
         <item name="tabIndicatorColor">#EF8E32</item>
         <item name="tabIndicatorHeight">2dp</item>
     </style>
+    <style name="EditTextForm">
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">13dp</item>
+        <item name="android:paddingBottom">22dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="font_type">@string/roboto_bold</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLength">255</item>
+    </style>
+    <style name="EditTextFormLogin">
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">13dp</item>
+        <item name="android:paddingBottom">22dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="font_type">@string/nunito_light</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLength">255</item>
+
+    </style>
+    <style name="tvHintForm">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">13dp</item>
+        <item name="android:layout_marginBottom">22dp</item>
+        <item name="font_type">@string/roboto_regular</item>
+    </style>
+
 
 </resources>

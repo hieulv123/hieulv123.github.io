@@ -9,5 +9,6 @@
     <string name="quicksand_medium">fonts/Quicksand-Medium.ttf</string>
     <string name="helvetica_reuglar">fonts/HelveticaNeue-Regular.ttf</string>
     <string name="helvetica_medium">fonts/HelveticaNeue-Medium.ttf</string>
-    <string name="helvetica_bold">fonts/HelveticaNeue-Bold.otf</string>
+    <string name="helvetica_bold">fonts/HelveticaNeue-Bold.ttf</string>
+    <string name="nunito_light">fonts/Nunito-Light.ttf</string>
 </resources>

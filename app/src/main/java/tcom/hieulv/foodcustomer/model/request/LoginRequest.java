@@ -13,10 +13,14 @@ public class LoginRequest implements Serializable {
     @Expose
     @SerializedName("password")
     private  String password ;
+    @Expose
+    @SerializedName("type_app")
+    private String typeapp;
 
-    public LoginRequest(String email, String password) {
+    public LoginRequest(String email, String password,String typeapp) {
         this.email = email;
         this.password = password;
+        this.typeapp = typeapp;
     }
 
     public String getEmail() {
@@ -33,5 +37,13 @@ public class LoginRequest implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getTypeapp() {
+        return typeapp;
+    }
+
+    public void setTypeapp(String typeapp) {
+        this.typeapp = typeapp;
     }
 }

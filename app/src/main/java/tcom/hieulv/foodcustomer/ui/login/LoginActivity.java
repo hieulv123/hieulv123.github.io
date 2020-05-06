@@ -13,7 +13,7 @@ import tcom.hieulv.foodcustomer.base.BaseFragment;
 import tcom.hieulv.foodcustomer.base.MvpView;
 import tcom.hieulv.foodcustomer.util.CommonUntils;
 
-public class LoginActivity extends BaseActivity implements LoginMvpView {
+public class LoginActivity extends BaseActivity{
 
 
     @Override
@@ -53,14 +53,6 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     public void showMessage(String message) {
     }
 
-    @Override
-    public void onLoginSuccess() {
 
-    }
-
-    @Override
-    public void onLoginError(String message) {
-
-    }
 }
 

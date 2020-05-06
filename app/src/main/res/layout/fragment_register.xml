@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/scrollview_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffffff">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/ic_back"
-                android:layout_width="8dp"
-                android:layout_height="14dp"
-                android:layout_marginLeft="19dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginLeft="13dp"
                 android:layout_marginTop="12dp"
                 android:src="@drawable/ic_back_left"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -32,6 +38,7 @@
                 android:text="Đăng Ký"
                 android:textColor="@color/colorOrange"
                 android:textSize="20sp"
+                android:layout_marginLeft="6dp"
                 app:font_type="@string/roboto_bold"
                 app:layout_constraintLeft_toLeftOf="@+id/ic_back"
                 app:layout_constraintTop_toBottomOf="@id/ic_back" />
@@ -50,19 +57,23 @@
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
                 android:id="@+id/edthoten"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
-                android:paddingLeft="13dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="18dp"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_hoten" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintName"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ tên"
+                app:layout_constraintBottom_toBottomOf="@id/edthoten"
+                app:layout_constraintLeft_toLeftOf="@id/edthoten"
+                app:layout_constraintTop_toTopOf="@id/edthoten" />
+
 
             <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
                 android:id="@+id/tvngaysinh"
@@ -77,20 +88,23 @@
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
                 android:id="@+id/edtngaysinh"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
                 android:inputType="date"
-                android:paddingLeft="13dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="18dp"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvngaysinh" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintBirthday"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(yyyy-mm-dd)"
+                app:layout_constraintBottom_toBottomOf="@id/edtngaysinh"
+                app:layout_constraintLeft_toLeftOf="@id/edtngaysinh"
+                app:layout_constraintTop_toTopOf="@id/edtngaysinh" />
 
             <ImageView
                 android:id="@+id/img_calendar"
@@ -118,19 +132,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/edtngaysinh" />
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
+                android:inputType="numberDecimal"
                 android:id="@+id/edtcmnd"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
-                android:paddingLeft="13dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="18dp"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_cmnd" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintCmnd"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CMND/PassPort"
+                app:layout_constraintBottom_toBottomOf="@id/edtcmnd"
+                app:layout_constraintLeft_toLeftOf="@id/edtcmnd"
+                app:layout_constraintTop_toTopOf="@id/edtcmnd" />
+
 
             <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
                 android:id="@+id/tv_sdt"
@@ -144,20 +163,23 @@
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
                 android:id="@+id/edtsdt"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
                 android:inputType="phone"
                 android:maxLength="11"
-                android:paddingLeft="13dp"
-                android:paddingTop="13dp"
-                android:paddingBottom="18dp"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_sdt" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintPhone"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại"
+                app:layout_constraintBottom_toBottomOf="@id/edtsdt"
+                app:layout_constraintLeft_toLeftOf="@id/edtsdt"
+                app:layout_constraintTop_toTopOf="@id/edtsdt" />
 
             <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
                 android:id="@+id/tv_email"
@@ -171,18 +193,22 @@
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
                 android:id="@+id/edtemail"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
-                android:paddingLeft="13dp"
-                android:paddingTop="13dp"
-                android:paddingBottom="18dp"
+                android:inputType="textEmailAddress"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintEmailRg"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                app:layout_constraintBottom_toBottomOf="@id/edtemail"
+                app:layout_constraintLeft_toLeftOf="@id/edtemail"
+                app:layout_constraintTop_toTopOf="@id/edtemail" />
 
             <TextView
                 android:id="@+id/tv_diachi"
@@ -190,24 +216,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_marginLeft"
                 android:layout_marginTop="18dp"
-                android:text="Địa Chỉ"
+                android:text="Địa chỉ"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtemail" />
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
                 android:id="@+id/edtdiachi"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
-                android:paddingLeft="13dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="18dp"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_diachi" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintAddress"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ"
+                app:layout_constraintBottom_toBottomOf="@id/edtdiachi"
+                app:layout_constraintLeft_toLeftOf="@id/edtdiachi"
+                app:layout_constraintTop_toTopOf="@id/edtdiachi" />
 
             <TextView
                 android:id="@+id/tv_matkhau"
@@ -221,33 +250,36 @@
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
                 android:id="@+id/edtmatkhau"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
                 android:inputType="textPassword"
-                android:paddingLeft="13dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="18dp"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_matkhau" />
 
-            <TextView
-                android:id="@+id/view"
-                android:layout_width="23dp"
-                android:layout_height="14dp"
-                android:layout_marginTop="16dp"
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintPasswordRg"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mật khẩu"
+                app:layout_constraintBottom_toBottomOf="@id/edtmatkhau"
+                app:layout_constraintLeft_toLeftOf="@id/edtmatkhau"
+                app:layout_constraintTop_toTopOf="@id/edtmatkhau" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="13dp"
                 android:layout_marginRight="19dp"
                 android:layout_marginBottom="18dp"
-                android:background="@drawable/ic_view"
+                android:background="@drawable/ic_visibility_black_24dp"
                 app:layout_constraintBottom_toBottomOf="@+id/edtmatkhau"
-                app:layout_constraintDimensionRatio="18:13"
+                app:layout_constraintDimensionRatio="18:15"
                 app:layout_constraintRight_toRightOf="@id/edtmatkhau"
                 app:layout_constraintTop_toTopOf="@+id/edtmatkhau"
-                app:layout_constraintWidth_percent="0.08" />
+                app:layout_constraintWidth_percent="0.06" />
 
 
             <TextView
@@ -255,27 +287,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_marginLeft"
-                android:layout_marginTop="18dp"
-                android:text="Nhập Lại Mật khẩu"
-                android:textColor="@color/colorAccent"
+                android:layout_marginTop="12dp"
+                android:text="Nhập lại mật khẩu"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edtmatkhau" />
 
             <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
                 android:id="@+id/edtconfigmatkhau"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginRight="16dp"
+                style="@style/EditTextForm"
                 android:background="@drawable/background_editextpng"
                 android:inputType="textPassword"
-                android:paddingLeft="13dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="18dp"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_configmatkhau" />
+
+            <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
+                android:id="@+id/tv_hintConfigPasswordRg"
+                style="@style/tvHintForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhập lại mật khẩu"
+                app:layout_constraintBottom_toBottomOf="@id/edtconfigmatkhau"
+                app:layout_constraintLeft_toLeftOf="@id/edtconfigmatkhau"
+                app:layout_constraintTop_toTopOf="@id/edtconfigmatkhau" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/ic_visibility_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edtconfigmatkhau"
+                app:layout_constraintDimensionRatio="18:15"
+                app:layout_constraintRight_toRightOf="@id/edtconfigmatkhau"
+                app:layout_constraintTop_toTopOf="@+id/edtconfigmatkhau"
+                app:layout_constraintWidth_percent="0.06" />
 
             <Button
                 android:id="@+id/btn_dangki"
@@ -288,8 +336,10 @@
                 android:text="Đăng Ký"
                 android:textColor="#fff"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="30dp"
                 app:layout_constraintTop_toBottomOf="@+id/edtconfigmatkhau" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

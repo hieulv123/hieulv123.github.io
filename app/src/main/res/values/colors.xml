@@ -7,5 +7,6 @@
     <color name="colorOrange">#EF8E32</color>
     <color name="colorBlue"> #4267B2</color>
     <color name="colorBlueThin">#2F80ED</color>
-    <color name="Black" >#323643</color>
+    <color name="Black" > #333333</color>
+    <color name="textError">#F3534A</color>
 </resources>

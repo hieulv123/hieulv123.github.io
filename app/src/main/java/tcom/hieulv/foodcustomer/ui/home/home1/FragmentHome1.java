@@ -1,6 +1,10 @@
 package tcom.hieulv.foodcustomer.ui.home.home1;
 
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -25,6 +29,8 @@ import tcom.hieulv.foodcustomer.util.CommonUntils;
 public class FragmentHome1 extends BaseFragment implements Home1MvpView {
     @BindView(R.id.edt_em_fg)
     EditText edtEmail;
+    @BindView(R.id.tvHintEmailFg)
+    TextView tvHintEmailFg;
     private Home1Presenter mPresenter;
 
 
@@ -42,6 +48,7 @@ public class FragmentHome1 extends BaseFragment implements Home1MvpView {
 
     @Override
     protected void setUp(View view) {
+        tvHintEditTextChange(edtEmail,tvHintEmailFg);
 
     }
 
@@ -56,14 +63,13 @@ public class FragmentHome1 extends BaseFragment implements Home1MvpView {
             }
         }
 
-//            dialogConfig();
     }
 
 
     private void addFragment(Fragment fragment) {
         FragmentManager fm = getActivity().getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.frame_login, fragment).addToBackStack(null);
+        ft.replace(R.id.frame_login, fragment);
         ft.commit();
     }
 
@@ -90,6 +96,7 @@ public class FragmentHome1 extends BaseFragment implements Home1MvpView {
 
     public void dialogConfig() {
         Dialog dialog = new Dialog(getActivity());
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(R.layout.dialog_custom);
         TextView tvAccept = dialog.findViewById(R.id.tv_accept);
         tvAccept.setOnClickListener(v -> {
@@ -103,5 +110,31 @@ public class FragmentHome1 extends BaseFragment implements Home1MvpView {
     }
     public void hideKeyboard(){
         View view = getActivity().getCurrentFocus();
+    }
+    private void tvHintEditTextChange(EditText editText, TextView textView) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                textView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                textView.setVisibility(View.INVISIBLE);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (editText.getText().toString().trim().isEmpty()) {
+                    textView.setVisibility(View.VISIBLE);
+                } else {
+                    textView.setVisibility(View.INVISIBLE);
+
+                }
+
+            }
+        });
+
     }
 }

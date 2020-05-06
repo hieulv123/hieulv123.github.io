@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -17,10 +19,16 @@ import tcom.hieulv.foodcustomer.model.ItemRestauran;
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.ViewHolder> {
     List<ItemRestauran> data;
     Context context;
+    clickDetailOrder clickDetailOrder ;
 
-    public RestaurantAdapter(List<ItemRestauran> data, Context context) {
+//    public void setOrder(clickDetailOrder clickDetailOrder){
+//        this.clickDetailOrder = clickDetailOrder;
+//    }
+
+    public RestaurantAdapter(List<ItemRestauran> data, Context context,clickDetailOrder clickDetailOrder) {
         this.data = data;
         this.context = context;
+        this.clickDetailOrder = clickDetailOrder;
     }
 
 
@@ -35,8 +43,16 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ItemRestauran item = data.get(position);
         holder.imgOrder.setImageDrawable(context.getResources().getDrawable(item.getImageRestaurant()));
+        holder.detailOrder.setOnClickListener(v->{
+            clickDetailOrder.clickImgDetail();
+
+        });
 
     }
+    public interface clickDetailOrder{
+        void clickImgDetail();
+    }
+
 
     @Override
     public int getItemCount() {
@@ -45,11 +61,13 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Vi
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgOrder;
+        ImageView imgOrder, detailOrder;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgOrder = itemView.findViewById(R.id.img_item_order);
+            detailOrder = itemView.findViewById(R.id.img_arrowright);
         }
     }
+
 }

@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="240dp"
-    android:layout_height="100dp"
+    android:layout_height="130dp"
     android:layout_gravity="center"
-    android:background="#fff"
-    android:orientation="vertical"
-    android:elevation="3dp">
+    android:background="@drawable/bg_custom_dialog"
+    android:elevation="1dp"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_marginTop="5dp"
         android:id="@+id/notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="Thông Báo"
         android:textColor="#000"
         android:textStyle="bold" />
 
     <TextView
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="12dp"
         android:text="Vui lòng kiểm tra email của bạn" />
 
     <ImageView
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:src="@drawable/line4" />
 

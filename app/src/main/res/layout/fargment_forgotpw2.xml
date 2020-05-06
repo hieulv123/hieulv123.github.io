@@ -33,8 +33,9 @@
         android:layout_marginLeft="88dp"
         android:layout_marginTop="28dp"
         android:layout_marginRight="88dp"
-        android:text="Lấy lại mật khẩu"
-        android:textSize="20sp"
+        android:text="Đổi mật khẩu"
+        android:textSize="25sp"
+        app:font_type="@string/roboto_bold"
         app:layout_constraintLeft_toLeftOf="@id/bg_fg_pw"
         app:layout_constraintRight_toRightOf="@id/bg_fg_pw"
         app:layout_constraintTop_toTopOf="@id/img_unionn" />
@@ -51,22 +52,36 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_pass2" />
 
     <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
-        android:ellipsize="end"
-        android:hint="6 ->20 Kí tự"
-        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
-        android:inputType="textPassword"
-        android:maxLength="20"
-        android:maxLines="1"
         android:id="@+id/edt_newpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:ellipsize="end"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:maxLines="1"
         android:paddingTop="16dp"
+        android:paddingRight="19dp"
         android:paddingBottom="21dp"
+        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_newpass" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/ic_visibility_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_newpass"
+        app:layout_constraintDimensionRatio="18:15"
+        app:layout_constraintRight_toRightOf="@id/edt_newpass"
+        app:layout_constraintTop_toTopOf="@+id/edt_newpass"
+        app:layout_constraintWidth_percent="0.06" />
 
     <tcom.hieulv.foodcustomer.customview.CustomTextViewFonts
         android:id="@+id/confignewpass"
@@ -80,20 +95,33 @@
         app:layout_constraintTop_toBottomOf="@id/edt_newpass" />
 
     <tcom.hieulv.foodcustomer.customview.CustomEditTextFonts
-        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:maxLength="20"
-
         android:id="@+id/edt_confignewpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="19dp"
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:maxLines="1"
         android:paddingBottom="21dp"
+        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confignewpass" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/ic_visibility_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_confignewpass"
+        app:layout_constraintDimensionRatio="18:15"
+        app:layout_constraintRight_toRightOf="@id/edt_confignewpass"
+        app:layout_constraintTop_toTopOf="@+id/edt_confignewpass"
+        app:layout_constraintWidth_percent="0.06" />
 
 
     <Button

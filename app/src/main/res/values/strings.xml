@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">FoodCustomer</string>
+    <string name="app_name">FoodCo</string>
+    <string name="Open">FoodCustomer</string>
+    <string name="Close">FoodCustomer</string>
     <string name="creat_account"><u>Tạo tài khoản</u></string>
     <string name="resend"><u>Gửi lại</u></string>
     <string name="tele_support"><u>Cần hỗ trợ qua tổng đài 19000</u></string>

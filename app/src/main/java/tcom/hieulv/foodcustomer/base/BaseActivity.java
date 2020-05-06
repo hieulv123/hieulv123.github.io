@@ -2,12 +2,15 @@ package tcom.hieulv.foodcustomer.base;
 
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -38,6 +41,8 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView,
         setUp();
 
     }
+
+
 
     protected abstract int getLayoutId();
 
